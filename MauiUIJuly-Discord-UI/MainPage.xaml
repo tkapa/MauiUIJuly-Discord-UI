@@ -2,28 +2,33 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:model="clr-namespace:MauiUIJuly_Discord_UI.Model"
-             x:Class="MauiUIJuly_Discord_UI.MainPage">
+             x:Class="MauiUIJuly_Discord_UI.MainPage"
+             xmlns:viewmodel="clr-namespace:MauiUIJuly_Discord_UI.ViewModel"
+             x:DataType="viewmodel:MainPageModel">
     <Grid RowDefinitions="*, Auto"
           Padding="10">
         <!--Display Messages-->
         <CollectionView Grid.Row="0"
                         Grid.ColumnSpan="3"
-                        VerticalOptions="End">
-            <CollectionView.ItemsSource>
-                <x:Array Type="{x:Type model:Message}">
-                    <model:Message ChatMessage="Hello there!" />
-                    <model:Message ChatMessage="Hi :)" />
-                    <model:Message ChatMessage="Wow this is cool!" />
-                </x:Array>
-            </CollectionView.ItemsSource>
+                        VerticalOptions="End"
+                        ItemsSource="{Binding messageList}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="model:Message">
                     <HorizontalStackLayout Padding="5">
-                        <Label Text="Image"/>
-                        <VerticalStackLayout>
-                            <Frame>
-                                <Label Text="{Binding ChatMessage}" />
-                            </Frame>
+                        <Image 
+                            Source="{Binding User.ProfilePictureLink}"
+                            MaximumHeightRequest="50"
+                            MaximumWidthRequest="50"/>
+                        <VerticalStackLayout 
+                            Padding="5">
+                            <HorizontalStackLayout>
+                                <Label Text="{Binding User.Name}" FontSize="15"/>
+                                <Label Text="{Binding TimeStamp}" 
+                                       FontSize="10" 
+                                       VerticalOptions="End"
+                                       Padding="3"/>
+                            </HorizontalStackLayout>
+                            <Label Text="{Binding ChatMessage}" FontSize="12"/>
                         </VerticalStackLayout>
                     </HorizontalStackLayout>
                 </DataTemplate>

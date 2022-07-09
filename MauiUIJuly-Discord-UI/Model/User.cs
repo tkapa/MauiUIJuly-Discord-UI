@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MauiUIJuly_Discord_UI.Model
+﻿namespace MauiUIJuly_Discord_UI.Model
 {
-    internal class User
+    public class User
     {
+        public int UserId { get; set; }
         public string Name { get; set; }
-        public string ProfilePicture { get; set; }
+        public string ProfilePictureLink { get; set; }
     }
 }

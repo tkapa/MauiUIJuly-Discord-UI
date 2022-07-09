@@ -1,4 +1,7 @@
-﻿namespace MauiUIJuly_Discord_UI;
+﻿using MauiUIJuly_Discord_UI.Resources.MockData;
+using MauiUIJuly_Discord_UI.ViewModel;
+
+namespace MauiUIJuly_Discord_UI;
 
 public static class MauiProgram
 {
@@ -12,6 +15,12 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
+
+		builder.Services
+			.AddSingleton<MainPage>()
+			.AddSingleton<MainPageModel>()
+			.AddSingleton<MockMessages>()
+			.AddSingleton<MockUsers>();
 
 		return builder.Build();
 	}
