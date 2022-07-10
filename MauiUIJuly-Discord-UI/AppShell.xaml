@@ -3,11 +3,9 @@
     x:Class="MauiUIJuly_Discord_UI.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:MauiUIJuly_Discord_UI"
-    Shell.FlyoutBehavior="Disabled">
-
+    xmlns:local="clr-namespace:MauiUIJuly_Discord_UI">
     <ShellContent
-        Title="Home"
+        Title="#general"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 

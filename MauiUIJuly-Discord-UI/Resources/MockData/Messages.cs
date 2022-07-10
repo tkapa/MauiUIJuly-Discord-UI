@@ -14,19 +14,19 @@ namespace MauiUIJuly_Discord_UI.Resources.MockData
                 {
                     User = userList[0],
                     ChatMessage = "Hey everyone!",
-                    TimeStamp = DateTime.Now.AddMinutes(-20)
+                    TimeStamp = "Today at 9:20 AM"
                 },
                 new Message
                 {
                     User = userList[2],
                     ChatMessage = "What's going on today?",
-                    TimeStamp = DateTime.Now.AddMinutes(-7)
+                    TimeStamp = "Today at 10:23 AM"
                 },
                 new Message
                 {
                     User = userList[1],
                     ChatMessage = "Not too much",
-                    TimeStamp = DateTime.Now.AddMinutes(-1)
+                    TimeStamp = "Today at 10:41 AM"
                 }
             };
         }

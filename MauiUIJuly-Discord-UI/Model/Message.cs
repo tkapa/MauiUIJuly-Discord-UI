@@ -4,6 +4,6 @@
     {
         public User User { get; set; }
         public string ChatMessage { get; set; }
-        public DateTime TimeStamp { get; set; }
+        public string TimeStamp { get; set; }
     }
 }

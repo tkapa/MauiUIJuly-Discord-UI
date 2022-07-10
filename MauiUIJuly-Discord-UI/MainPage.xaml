@@ -4,9 +4,12 @@
              xmlns:model="clr-namespace:MauiUIJuly_Discord_UI.Model"
              x:Class="MauiUIJuly_Discord_UI.MainPage"
              xmlns:viewmodel="clr-namespace:MauiUIJuly_Discord_UI.ViewModel"
-             x:DataType="viewmodel:MainPageModel">
-    <Grid RowDefinitions="*, Auto"
-          Padding="10">
+             x:DataType="viewmodel:MainPageModel"
+             Shell.BackgroundColor="#36393e">
+
+    <Grid RowDefinitions="*, auto"
+          Padding="10"
+          BackgroundColor="#424549">
         <!--Display Messages-->
         <CollectionView Grid.Row="0"
                         Grid.ColumnSpan="3"
@@ -14,21 +17,35 @@
                         ItemsSource="{Binding messageList}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="model:Message">
-                    <HorizontalStackLayout Padding="5">
-                        <Image 
-                            Source="{Binding User.ProfilePictureLink}"
-                            MaximumHeightRequest="50"
-                            MaximumWidthRequest="50"/>
+                    <HorizontalStackLayout Padding="0,5">
+                        <Frame CornerRadius="20"
+                           HeightRequest="40"
+                           WidthRequest="40"
+                           IsClippedToBounds="True"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center">
+                            <Image Source="{Binding User.ProfilePictureLink}"
+                                   Aspect="AspectFill"
+                                   Margin="-20"
+                                   HeightRequest="40"
+                                   WidthRequest="40" />
+                        </Frame>
                         <VerticalStackLayout 
                             Padding="5">
                             <HorizontalStackLayout>
-                                <Label Text="{Binding User.Name}" FontSize="15"/>
+                                <Label Text="{Binding User.Name}" 
+                                       FontSize="15"
+                                       FontAttributes="Bold"
+                                       TextColor="WhiteSmoke"/>
                                 <Label Text="{Binding TimeStamp}" 
                                        FontSize="10" 
                                        VerticalOptions="End"
-                                       Padding="3"/>
+                                       Padding="3"
+                                       TextColor="#E1E1E1"/>
                             </HorizontalStackLayout>
-                            <Label Text="{Binding ChatMessage}" FontSize="12"/>
+                            <Label Text="{Binding ChatMessage}" 
+                                   FontSize="12"
+                                   TextColor="WhiteSmoke"/>
                         </VerticalStackLayout>
                     </HorizontalStackLayout>
                 </DataTemplate>
@@ -42,15 +59,26 @@
                 VerticalOptions="End">
             <Button Text="+"
                 Grid.Column="0"
-                Grid.ColumnSpan="1"/>
+                Grid.ColumnSpan="1"
+                BackgroundColor="#282B30"/>
             <Button Text=">"
                 Grid.Column="1"
-                Grid.ColumnSpan="1"/>
-            <Entry Keyboard="Chat" 
-               Placeholder="Message #general"
-               Grid.Column="2"/>
+                Grid.ColumnSpan="1"
+                BackgroundColor="#282B30"/>
+            <Border Grid.Column="2"
+                    Padding="5"
+                    BackgroundColor="#282B30"
+                    StrokeThickness="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="30"/>
+                </Border.StrokeShape>
+                <Entry Keyboard="Chat" 
+                   Placeholder="Message #general"                   
+                   BackgroundColor="#282B30"/>
+            </Border>                
             <Button Text="Send" 
-                Grid.Column="3"/>
+                Grid.Column="3"
+                IsVisible="False"/>
         </Grid>
     </Grid>
 </ContentPage>
