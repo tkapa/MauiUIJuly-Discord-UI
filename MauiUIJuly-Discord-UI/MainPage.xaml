@@ -54,6 +54,7 @@
         
         <!--User Input-->
         <Grid   Grid.Row="1"
+                RowDefinitions="40"
                 ColumnDefinitions="Auto,Auto,60*,Auto"
                 ColumnSpacing="5"
                 VerticalOptions="End">
@@ -66,14 +67,16 @@
                 Grid.ColumnSpan="1"
                 BackgroundColor="#282B30"/>
             <Border Grid.Column="2"
-                    Padding="5"
                     BackgroundColor="#282B30"
                     StrokeThickness="0">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="30"/>
                 </Border.StrokeShape>
-                <Entry Keyboard="Chat" 
-                   Placeholder="Message #general"                   
+                <Entry Keyboard="Chat"
+                   Margin="20,1,0,0"
+                   FontSize="12"
+                   Placeholder="Message #general" 
+                   TextColor="WhiteSmoke"
                    BackgroundColor="#282B30"/>
             </Border>                
             <Button Text="Send" 
