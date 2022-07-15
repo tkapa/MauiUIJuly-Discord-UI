@@ -11,60 +11,63 @@
           Padding="10"
           BackgroundColor="#424549">
         <!--Display Messages-->
-        <CollectionView Grid.Row="0"
-                        Grid.ColumnSpan="3"
-                        VerticalOptions="End"
-                        ItemsSource="{Binding messageList}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="model:Message">
-                    <HorizontalStackLayout Padding="0,5">
-                        <Frame CornerRadius="20"
+        <ScrollView Grid.Row="0"
+                    Grid.ColumnSpan="3"
+                    VerticalOptions="End">
+            <StackLayout BindableLayout.ItemsSource="{Binding MessageList}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="model:Message">
+                        <HorizontalStackLayout Padding="0,5">
+                            <Frame CornerRadius="20"
                            HeightRequest="40"
                            WidthRequest="40"
                            IsClippedToBounds="True"
                            HorizontalOptions="Center"
                            VerticalOptions="Center">
-                            <Image Source="{Binding User.ProfilePictureLink}"
+                                <Image Source="{Binding User.ProfilePictureLink}"
                                    Aspect="AspectFill"
                                    Margin="-20"
                                    HeightRequest="40"
                                    WidthRequest="40" />
-                        </Frame>
-                        <VerticalStackLayout 
+                            </Frame>
+                            <VerticalStackLayout 
                             Padding="5">
-                            <HorizontalStackLayout>
-                                <Label Text="{Binding User.Name}" 
+                                <HorizontalStackLayout>
+                                    <Label Text="{Binding User.Name}" 
                                        FontSize="15"
                                        FontAttributes="Bold"
                                        TextColor="WhiteSmoke"/>
-                                <Label Text="{Binding TimeStamp}" 
+                                    <Label Text="{Binding TimeStamp}" 
                                        FontSize="10" 
                                        VerticalOptions="End"
                                        Padding="3"
                                        TextColor="#E1E1E1"/>
-                            </HorizontalStackLayout>
-                            <Label Text="{Binding ChatMessage}" 
+                                </HorizontalStackLayout>
+                                <Label Text="{Binding ChatMessage}" 
                                    FontSize="12"
                                    TextColor="WhiteSmoke"/>
-                        </VerticalStackLayout>
-                    </HorizontalStackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </ScrollView>
         
         <!--User Input-->
         <Grid   Grid.Row="1"
                 RowDefinitions="40"
-                ColumnDefinitions="Auto,Auto,60*,Auto"
+                ColumnDefinitions="40,40,60*,Auto"
                 ColumnSpacing="5"
                 VerticalOptions="End">
             <Button Text="+"
                 Grid.Column="0"
                 Grid.ColumnSpan="1"
+                CornerRadius="20"
                 BackgroundColor="#282B30"/>
             <Button Text=">"
                 Grid.Column="1"
                 Grid.ColumnSpan="1"
+                CornerRadius="20"
                 BackgroundColor="#282B30"/>
             <Border Grid.Column="2"
                     BackgroundColor="#282B30"
@@ -77,7 +80,8 @@
                    FontSize="12"
                    Placeholder="Message #general" 
                    TextColor="WhiteSmoke"
-                   BackgroundColor="#282B30"/>
+                   BackgroundColor="#282B30"
+                   Text="{Binding Text}"/>
             </Border>                
             <Button Text="Send" 
                 Grid.Column="3"

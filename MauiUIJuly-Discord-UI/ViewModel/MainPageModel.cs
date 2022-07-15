@@ -1,18 +1,24 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using MauiUIJuly_Discord_UI.Model;
 using MauiUIJuly_Discord_UI.Resources.MockData;
+using Microsoft.Toolkit.Mvvm.Input;
 
 namespace MauiUIJuly_Discord_UI.ViewModel
 {
     public partial class MainPageModel : ObservableObject
     {
-        public MainPageModel(MockMessages _messages)
+        public MainPageModel(MockMessages _messages, MockUsers _users)
         {
             messageList = _messages.FakeMessages;
+            users = _users.FakeUsers;
         }
 
-        public List<Message> messageList { get; set; }
+        readonly List<User> users;
 
-        public string text { get; set; }
+        [ObservableProperty]
+        List<Message> messageList;
+
+        [ObservableProperty]
+        public string text;
     }
 }
