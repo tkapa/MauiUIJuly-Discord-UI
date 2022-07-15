@@ -21,6 +21,116 @@ namespace MauiUIJuly_Discord_UI.Resources.MockData
                     User = userList[2],
                     ChatMessage = "What's going on today?",
                     TimeStamp = "Today at 10:23 AM"
+                },new Message
+                {
+                    User = userList[0],
+                    ChatMessage = "Hey everyone!",
+                    TimeStamp = "Today at 9:20 AM"
+                },
+                new Message
+                {
+                    User = userList[2],
+                    ChatMessage = "What's going on today?",
+                    TimeStamp = "Today at 10:23 AM"
+                },new Message
+                {
+                    User = userList[0],
+                    ChatMessage = "Hey everyone!",
+                    TimeStamp = "Today at 9:20 AM"
+                },
+                new Message
+                {
+                    User = userList[2],
+                    ChatMessage = "What's going on today?",
+                    TimeStamp = "Today at 10:23 AM"
+                },new Message
+                {
+                    User = userList[0],
+                    ChatMessage = "Hey everyone!",
+                    TimeStamp = "Today at 9:20 AM"
+                },
+                new Message
+                {
+                    User = userList[2],
+                    ChatMessage = "What's going on today?",
+                    TimeStamp = "Today at 10:23 AM"
+                },new Message
+                {
+                    User = userList[0],
+                    ChatMessage = "Hey everyone!",
+                    TimeStamp = "Today at 9:20 AM"
+                },
+                new Message
+                {
+                    User = userList[2],
+                    ChatMessage = "What's going on today?",
+                    TimeStamp = "Today at 10:23 AM"
+                },new Message
+                {
+                    User = userList[0],
+                    ChatMessage = "Hey everyone!",
+                    TimeStamp = "Today at 9:20 AM"
+                },
+                new Message
+                {
+                    User = userList[2],
+                    ChatMessage = "What's going on today?",
+                    TimeStamp = "Today at 10:23 AM"
+                },new Message
+                {
+                    User = userList[0],
+                    ChatMessage = "Hey everyone!",
+                    TimeStamp = "Today at 9:20 AM"
+                },
+                new Message
+                {
+                    User = userList[2],
+                    ChatMessage = "What's going on today?",
+                    TimeStamp = "Today at 10:23 AM"
+                },new Message
+                {
+                    User = userList[0],
+                    ChatMessage = "Hey everyone!",
+                    TimeStamp = "Today at 9:20 AM"
+                },
+                new Message
+                {
+                    User = userList[2],
+                    ChatMessage = "What's going on today?",
+                    TimeStamp = "Today at 10:23 AM"
+                },new Message
+                {
+                    User = userList[0],
+                    ChatMessage = "Hey everyone!",
+                    TimeStamp = "Today at 9:20 AM"
+                },
+                new Message
+                {
+                    User = userList[2],
+                    ChatMessage = "What's going on today?",
+                    TimeStamp = "Today at 10:23 AM"
+                },new Message
+                {
+                    User = userList[0],
+                    ChatMessage = "Hey everyone!",
+                    TimeStamp = "Today at 9:20 AM"
+                },
+                new Message
+                {
+                    User = userList[2],
+                    ChatMessage = "What's going on today?",
+                    TimeStamp = "Today at 10:23 AM"
+                },new Message
+                {
+                    User = userList[0],
+                    ChatMessage = "Hey everyone!",
+                    TimeStamp = "Today at 9:20 AM"
+                },
+                new Message
+                {
+                    User = userList[2],
+                    ChatMessage = "What's going on today?",
+                    TimeStamp = "Today at 10:23 AM"
                 },
                 new Message
                 {
