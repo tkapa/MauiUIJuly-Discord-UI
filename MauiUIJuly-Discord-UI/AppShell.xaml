@@ -3,7 +3,8 @@
     x:Class="MauiUIJuly_Discord_UI.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:MauiUIJuly_Discord_UI">
+    xmlns:local="clr-namespace:MauiUIJuly_Discord_UI"
+    BackgroundColor="#36393e">
     <ShellContent
         Title="#general"
         ContentTemplate="{DataTemplate local:MainPage}"

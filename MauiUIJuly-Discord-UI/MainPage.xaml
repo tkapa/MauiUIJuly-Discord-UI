@@ -1,39 +1,71 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<?xml version="1.0" encoding="utf-8" ?><ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:model="clr-namespace:MauiUIJuly_Discord_UI.Model"
              x:Class="MauiUIJuly_Discord_UI.MainPage"
              xmlns:helpers="clr-namespace:MauiUIJuly_Discord_UI.Helpers"
              xmlns:viewmodel="clr-namespace:MauiUIJuly_Discord_UI.ViewModel"
-             x:DataType="viewmodel:MainPageModel"
-             Shell.BackgroundColor="#36393e">
+             x:DataType="viewmodel:MainPageModel">
 
-    <Grid RowDefinitions="*, auto"
+    <Shell.TitleView>
+        <HorizontalStackLayout Padding="-15">
+            <Button BackgroundColor="#36393e">
+                <Button.ImageSource>
+                    <FontImageSource
+                        FontFamily="MaterialIcons"
+                        Glyph="{x:Static helpers:MaterialFontHelper.Menu}" 
+                        Size="25"
+                        Color="WhiteSmoke"/>
+                </Button.ImageSource>
+            </Button>
+            <Label Text="#"
+                   TextColor="#99aab5" 
+                   FontAttributes="Bold"
+                   FontSize="20"
+                   VerticalOptions="Center"/>
+            <Label Text="general"
+                   TextColor="WhiteSmoke"
+                   FontAttributes="Bold"
+                   FontSize="20"
+                   Padding="5"
+                   VerticalOptions="Center"/>
+            <Button BackgroundColor="#36393e"
+                    HorizontalOptions="EndAndExpand">
+                <Button.ImageSource>
+                    <FontImageSource
+                        FontFamily="MaterialIcons"
+                        Glyph="{x:Static helpers:MaterialFontHelper.AccountMultiple}" 
+                        Size="25"
+                        Color="WhiteSmoke"/>
+                </Button.ImageSource>
+            </Button>
+        </HorizontalStackLayout>
+    </Shell.TitleView>
+
+    <!--Display Messages-->
+    <Grid RowDefinitions="*, Auto"
           Padding="5"
           RowSpacing="5"
           BackgroundColor="#424549">
-        <!--Display Messages-->
         <ScrollView Grid.Row="0"
-                    Grid.ColumnSpan="3"
                     VerticalOptions="End">
             <StackLayout BindableLayout.ItemsSource="{Binding MessageList}">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="model:Message">
                         <HorizontalStackLayout Padding="0,5">
                             <Frame CornerRadius="20"
-                           HeightRequest="40"
-                           WidthRequest="40"
-                           IsClippedToBounds="True"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center">
+                                   HeightRequest="40"
+                                   WidthRequest="40"
+                                   IsClippedToBounds="True"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Start">
                                 <Image Source="{Binding User.ProfilePictureLink}"
                                    Aspect="AspectFill"
-                                   Margin="-20"
                                    HeightRequest="40"
                                    WidthRequest="40" />
                             </Frame>
                             <VerticalStackLayout 
-                            Padding="5">
+                                    Padding="10,5"
+                                    WidthRequest="350">
                                 <HorizontalStackLayout>
                                     <Label Text="{Binding User.Name}" 
                                        FontSize="15"
@@ -42,12 +74,15 @@
                                     <Label Text="{Binding TimeStamp}" 
                                        FontSize="10" 
                                        Padding="3, 0"
-                                       VerticalOptions="End"
+                                       VerticalOptions="Center"
                                        TextColor="#E1E1E1"/>
                                 </HorizontalStackLayout>
                                 <Label Text="{Binding ChatMessage}" 
+                                   HorizontalOptions="Fill"
                                    FontSize="12"
-                                   TextColor="WhiteSmoke"/>
+                                   TextColor="WhiteSmoke"
+                                   LineBreakMode="WordWrap"
+                                   MaxLines="10"/>
                             </VerticalStackLayout>
                         </HorizontalStackLayout>
                     </DataTemplate>
