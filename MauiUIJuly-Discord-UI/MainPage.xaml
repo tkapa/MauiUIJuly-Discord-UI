@@ -29,7 +29,7 @@
                    Padding="5"
                    VerticalOptions="Center"/>
             <Button BackgroundColor="#36393e"
-                    HorizontalOptions="EndAndExpand">
+                    Margin="195, 0">
                 <Button.ImageSource>
                     <FontImageSource
                         FontFamily="MaterialIcons"
