@@ -6,9 +6,10 @@
              xmlns:viewmodel="clr-namespace:MauiUIJuly_Discord_UI.ViewModel"
              x:DataType="viewmodel:MainPageModel">
 
+    <!--Header Content-->
     <Shell.TitleView>
         <HorizontalStackLayout Padding="-15">
-            <Button BackgroundColor="#36393e">
+            <Button BackgroundColor="#2F3136">
                 <Button.ImageSource>
                     <FontImageSource
                         FontFamily="MaterialIcons"
@@ -27,15 +28,15 @@
                    FontAttributes="Bold"
                    FontSize="20"
                    Padding="5"
+                   Margin="0,0,190,0"
                    VerticalOptions="Center"/>
-            <Button BackgroundColor="#36393e"
-                    Margin="195, 0">
+            <Button BackgroundColor="#2F3136">
                 <Button.ImageSource>
                     <FontImageSource
                         FontFamily="MaterialIcons"
                         Glyph="{x:Static helpers:MaterialFontHelper.AccountMultiple}" 
                         Size="25"
-                        Color="WhiteSmoke"/>
+                        Color="#FFFFFF"/>
                 </Button.ImageSource>
             </Button>
         </HorizontalStackLayout>
@@ -45,101 +46,132 @@
     <Grid RowDefinitions="*, Auto"
           Padding="5"
           RowSpacing="5"
-          BackgroundColor="#424549">
-        <ScrollView Grid.Row="0"
-                    VerticalOptions="End">
-            <StackLayout BindableLayout.ItemsSource="{Binding MessageList}">
-                <BindableLayout.ItemTemplate>
-                    <DataTemplate x:DataType="model:Message">
-                        <HorizontalStackLayout Padding="0,5">
-                            <Frame CornerRadius="20"
-                                   HeightRequest="40"
-                                   WidthRequest="40"
-                                   IsClippedToBounds="True"
-                                   HorizontalOptions="Center"
-                                   VerticalOptions="Start">
-                                <Image Source="{Binding User.ProfilePictureLink}"
-                                   Aspect="AspectFill"
-                                   HeightRequest="40"
-                                   WidthRequest="40" />
-                            </Frame>
-                            <VerticalStackLayout 
-                                    Padding="10,5"
-                                    WidthRequest="350">
-                                <HorizontalStackLayout>
-                                    <Label Text="{Binding User.Name}" 
-                                       FontSize="15"
-                                       FontAttributes="Bold"
-                                       TextColor="WhiteSmoke"/>
-                                    <Label Text="{Binding TimeStamp}" 
-                                       FontSize="10" 
-                                       Padding="3, 0"
-                                       VerticalOptions="Center"
-                                       TextColor="#E1E1E1"/>
-                                </HorizontalStackLayout>
-                                <Label Text="{Binding ChatMessage}" 
-                                   HorizontalOptions="Fill"
-                                   FontSize="12"
-                                   TextColor="WhiteSmoke"
-                                   LineBreakMode="WordWrap"
-                                   MaxLines="10"/>
-                            </VerticalStackLayout>
+          BackgroundColor="#36393F">
+
+<!--Display Messages-->
+<ScrollView Grid.Row="0"
+        VerticalOptions="End">
+
+    <StackLayout BindableLayout.ItemsSource="{Binding MessageList}">
+
+        <BindableLayout.ItemTemplate>
+
+            <DataTemplate x:DataType="model:Message">
+
+                <HorizontalStackLayout Padding="0,5">
+
+                    <Frame CornerRadius="20"
+                        HeightRequest="40"
+                        WidthRequest="40"
+                        IsClippedToBounds="True"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start">
+
+                        <Image Source="{Binding User.ProfilePictureLink}"
+                        Aspect="AspectFill"
+                        HeightRequest="40"
+                        WidthRequest="40" />
+
+                    </Frame>
+
+                    <VerticalStackLayout 
+                        Padding="10, 0"
+                        WidthRequest="350">
+
+                        <HorizontalStackLayout>
+
+                            <Label Text="{Binding User.Name}" 
+                            FontSize="15"
+                            FontAttributes="Bold"
+                            TextColor="WhiteSmoke"/>
+
+                            <Label Text="{Binding TimeStamp}" 
+                            FontSize="10" 
+                            Padding="3, 0"
+                            VerticalOptions="Center"
+                            TextColor="#E1E1E1"/>
+
                         </HorizontalStackLayout>
-                    </DataTemplate>
-                </BindableLayout.ItemTemplate>
-            </StackLayout>
-        </ScrollView>
+
+                        <Label Text="{Binding ChatMessage}" 
+                        HorizontalOptions="Fill"
+                        FontSize="12"
+                        TextColor="WhiteSmoke"
+                        LineBreakMode="WordWrap"
+                        MaxLines="10"/>
+
+                    </VerticalStackLayout>
+
+                </HorizontalStackLayout>
+
+            </DataTemplate>
+
+        </BindableLayout.ItemTemplate>
+
+    </StackLayout>
+
+</ScrollView>
+
+<!--User Input-->
+<Grid   Grid.Row="1"
+    RowDefinitions="40"
+    ColumnDefinitions="40,40,60*,Auto"
+    ColumnSpacing="5"
+    Padding="5"
+    VerticalOptions="End">
+    
+    <Button
+    Grid.Column="0"
+    Grid.ColumnSpan="1"
+    CornerRadius="20"
+    BackgroundColor="#292B2F">
+        <Button.ImageSource>
+            
+            <FontImageSource
+            FontFamily="MaterialIcons"
+            Glyph="{x:Static helpers:MaterialFontHelper.Plus}" 
+            Size="25"
+            Color="WhiteSmoke"/>
+            
+        </Button.ImageSource>
+    </Button>
+    
+    <Button
+    Grid.Column="1"
+    Grid.ColumnSpan="1"
+    CornerRadius="20"
+    BackgroundColor="#292B2F">
         
-        <!--User Input-->
-        <Grid   Grid.Row="1"
-                RowDefinitions="40"
-                ColumnDefinitions="40,40,60*,Auto"
-                ColumnSpacing="5"
-                Padding="5"
-                VerticalOptions="End">
-            <Button
-                Grid.Column="0"
-                Grid.ColumnSpan="1"
-                CornerRadius="20"
-                BackgroundColor="#282B30">
-                <Button.ImageSource>
-                    <FontImageSource
-                        FontFamily="MaterialIcons"
-                        Glyph="{x:Static helpers:MaterialFontHelper.Plus}" 
-                        Size="25"
-                        Color="WhiteSmoke"/>
-                </Button.ImageSource>
-            </Button>
-            <Button
-                Grid.Column="1"
-                Grid.ColumnSpan="1"
-                CornerRadius="20"
-                BackgroundColor="#282B30">
-                <Button.ImageSource>
-                    <FontImageSource
-                        FontFamily="MaterialIcons"
-                        Glyph="{x:Static helpers:MaterialFontHelper.Gift}" 
-                        Size="25"
-                        Color="WhiteSmoke"/>
-                </Button.ImageSource>
-            </Button>
-            <Border Grid.Column="2"
-                    BackgroundColor="#282B30"
-                    StrokeThickness="0">
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="30"/>
-                </Border.StrokeShape>
-                <Entry Keyboard="Chat"
-                   Margin="20,1,0,0"
-                   FontSize="12"
-                   Placeholder="Message #general" 
-                   TextColor="WhiteSmoke"
-                   BackgroundColor="#282B30"
-                   Text="{Binding Text}"/>
-            </Border>                
-            <Button Text="Send" 
-                Grid.Column="3"
-                IsVisible="False"/>
-        </Grid>
+        <Button.ImageSource>
+            
+            <FontImageSource
+            FontFamily="MaterialIcons"
+            Glyph="{x:Static helpers:MaterialFontHelper.Gift}" 
+            Size="25"
+            Color="WhiteSmoke"/>
+            
+        </Button.ImageSource>
+    </Button>
+    
+    <Border Grid.Column="2"
+        BackgroundColor="#292B2F"
+        StrokeThickness="0">
+        
+        <Border.StrokeShape>
+            
+            <RoundRectangle CornerRadius="30"/>
+            
+        </Border.StrokeShape>
+        
+        <Entry Keyboard="Chat"
+        Margin="20,1,0,0"
+        FontSize="12"
+        Placeholder="Message #general" 
+        TextColor="WhiteSmoke"
+        BackgroundColor="#292B2F"
+        Text="{Binding Text}"/>
+        
+    </Border>
+</Grid>
     </Grid>
 </ContentPage>

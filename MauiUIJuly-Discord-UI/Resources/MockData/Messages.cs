@@ -74,7 +74,7 @@ namespace MauiUIJuly_Discord_UI.Resources.MockData
                 new Message
                 {
                     User = userList[1],
-                    ChatMessage = "Not too much",
+                    ChatMessage = "Hombrecillo me despenada criaturas el con me",
                     TimeStamp = "Today at 10:41 AM"
                 }
             };
